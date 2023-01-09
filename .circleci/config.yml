@@ -22,10 +22,6 @@ jobs:
             echo 'this code runs properly'
 
 
-workflows:
-  build:
-    jobs:
-      - build
 
 
 
