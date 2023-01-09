@@ -5,13 +5,15 @@ jobs:
       - image: alpine:3.15
         auth:
           username: mydockerhub-user
-          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+          password: $DOCKERHUB_PASSWORD        
     steps:
+      - checkout
       - run:
-          name: The First Step
+          name : raise message
           command: |
-            echo 'Hello World!'
-            echo 'This is the delivery pipeline'
+            echo 'congratulations'
+            echo 'this code run porperly'
+
 
 
 
