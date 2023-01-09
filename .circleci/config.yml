@@ -1,0 +1,26 @@
+
+
+version: 2.1
+
+
+
+job:
+  buid:
+    docker:
+      - image: alpine:3.15
+        auth:
+          username: mydockerhub-user
+          password: $DOCKERHUB_PASSWORD
+
+
+        
+    step:
+      - checkout
+      - run:
+          name : raise message
+          command: |
+          echo 'this code runs properly'
+
+
+
+
