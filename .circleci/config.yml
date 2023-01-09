@@ -19,8 +19,8 @@ jobs:
       - run:
           name : raise message
           command: |
-            echo 'this code runs properly'
-
+            echo 'congratulations'
+            echo 'this code run porperly'
 
 
 
