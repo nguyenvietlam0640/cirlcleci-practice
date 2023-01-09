@@ -19,7 +19,7 @@ job:
       - run:
           name : raise message
           command: |
-          echo 'this code runs properly'
+            echo 'this code runs properly'
 
 
 
