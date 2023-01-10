@@ -21,8 +21,8 @@ jobs:
             coverage run -m pytest 
       - coveralls/upload:
           path_to_lcov: .coverage
-          with:
-            repo_token: shMx23aSB7ex6npmYqrQiad2pDTDiFHjc
+      with:
+        repo_token: shMx23aSB7ex6npmYqrQiad2pDTDiFHjc
 
       
 
