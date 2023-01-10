@@ -4,24 +4,29 @@ orbs:
 
 
 jobs:
-  build_and_test: # this can be any name you choose
+  build: # this can be any name you choose
     executor: python/default
     steps:
       - checkout
       - python/install-packages:
           pkg-manager: pip
+  test:
+    executor: python/default
+    steps:
+      - python/install-packages:
+          pkg-manager: pip
       - run:
           name: Run tests
           command: pytest test.py
-      - persist_to_workspace:
-          root: ~/project
-          paths:
-            - .
+
 
 workflows:
   test_my_app:
     jobs:
-      - build_and_test
+      - build
+      - test:
+        requires:
+        -build
     
 
 
