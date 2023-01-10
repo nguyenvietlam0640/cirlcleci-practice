@@ -18,6 +18,11 @@ jobs:
           command: |
             pip install pytest
             pytest test.py
+      - persist_to_workspace:
+          root: ~/project
+          paths:
+            - .
+      
 workflows:
   build_and_test:
     jobs:
