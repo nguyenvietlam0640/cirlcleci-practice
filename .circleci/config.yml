@@ -1,20 +1,39 @@
 version: 2.1
+
+
+
+orb:
+  python: circleci/python@2.0.3
+
+
+
 jobs:
   build:
-    docker:
-      - image: alpine:3.15
-        auth:
-          username: mydockerhub-user
-          password: $DOCKERHUB_PASSWORD
-
-    resource_class: small     
-    steps:
+    executor: python/default
+    step:
       - checkout
+      - python/install-packages:
+          pkg-manager: pip 
+
+
+  test:
+    executor: python/default
+    step:
       - run:
-          name : raise message
-          command: |
-            echo 'congratulations'
-            echo 'this code run porperly'
+          name: run test
+          command: python -m pytest
+
+workflows:
+  build_and_test:
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
+
+
+
+
 
 
 
