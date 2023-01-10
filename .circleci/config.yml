@@ -4,7 +4,7 @@ orbs:
 
 
 jobs:
-  build: # this can be any name you choose
+  build_and_test:
     executor: python/default
     steps:
       - checkout
@@ -12,14 +12,14 @@ jobs:
           pkg-manager: pip
       - run:
           name: Run tests
-          command: pytest test.py
+          command: python -m pytest
       
 
 
 workflows:
-  do:
+  execute:
     jobs:
-      - build
+      - build_and_test
 
     
 
