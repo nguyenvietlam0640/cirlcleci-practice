@@ -1,11 +1,10 @@
 
 
 
-
 from cd import count
 
 
 
-def count_test():
+def test_count():
     assert count(2) == 4
 
