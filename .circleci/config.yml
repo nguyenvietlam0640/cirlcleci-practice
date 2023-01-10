@@ -10,23 +10,17 @@ jobs:
       - checkout
       - python/install-packages:
           pkg-manager: pip
-  test:
-    executor: python/default
-    steps:
-      - python/install-packages:
-          pkg-manager: pip
       - run:
           name: Run tests
           command: pytest test.py
+      
 
 
 workflows:
   do:
     jobs:
       - build
-      - test:
-          requires:
-            - build
+
     
 
 
