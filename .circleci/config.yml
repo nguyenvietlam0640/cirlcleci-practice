@@ -14,6 +14,8 @@ jobs:
       - run:
           name: Run tests
           command: |
+            sudo apt-get update
+            sudo apt-get upgrade
             sudo apt-get install npm
             coverage run -m pytest 
       - coveralls/upload
