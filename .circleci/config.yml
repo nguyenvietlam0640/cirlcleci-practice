@@ -17,8 +17,10 @@ jobs:
             sudo apt-get update
             sudo apt-get upgrade
             sudo apt-get install npm
+            
             coverage run -m pytest 
-      - coveralls/upload
+      - coveralls/upload:
+          path_to_lcov: ./coverage/lcov.info
       
 
 
