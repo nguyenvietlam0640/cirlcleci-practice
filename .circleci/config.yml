@@ -16,8 +16,8 @@ jobs:
       - run:
           name: Run tests
           command: |
-          npm install && make test-coverage
-          coverage run -m pytest 
+            npm install && make test-coverage
+            coverage run -m pytest 
       - coveralls/upload
       
 
