@@ -8,7 +8,7 @@ orbs:
 
 
 jobs:
-  build:
+  _build:
     executor: python/default
     step:
       - checkout
@@ -16,7 +16,7 @@ jobs:
           pkg-manager: pip 
 
 
-  test:
+  _test:
     executor: python/default
     step:
       - run:
@@ -29,10 +29,10 @@ jobs:
 workflows:
   build_and_test:
     jobs:
-      - build
-      - test:
+      - _build
+      - _test:
           requires:
-            - build
+            - _build
 
 
 
