@@ -21,12 +21,12 @@ jobs:
 
 
 workflows:
-  test_my_app:
+  do:
     jobs:
       - build
       - test:
         requires:
-        - build
+          - build
     
 
 
