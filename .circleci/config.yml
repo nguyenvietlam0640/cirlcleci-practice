@@ -15,7 +15,9 @@ jobs:
     steps:
       - run:
           name: run test
-          command: python -m pytest
+          command: |
+            pip install pytest
+            python -m pytest
 workflows:
   build_and_test:
     jobs:
