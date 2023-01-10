@@ -20,7 +20,7 @@ jobs:
             
             coverage run -m pytest 
       - coveralls/upload:
-          path_to_lcov: ./coverage/lcov.info
+          path_to_lcov: ./coverage
       
 
 
