@@ -16,7 +16,6 @@ jobs:
       - run:
           name: run test
           command: |
-            pip install pytest
             python -m pytest
       - persist_to_workspace:
           root: ~/project
