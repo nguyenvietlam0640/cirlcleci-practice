@@ -1,7 +1,7 @@
 version: 2.1
 orbs:
   python: circleci/python@2.0.3
-
+  coveralls: coveralls/coveralls@1.0.6
 
 jobs:
   build_and_test:
@@ -12,7 +12,8 @@ jobs:
           pkg-manager: pip
       - run:
           name: Run tests
-          command: python -m pytest
+          command: npm install && make test-coverage
+      - coveralls/upload
       
 
 
