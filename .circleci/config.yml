@@ -22,7 +22,7 @@ jobs:
       - coveralls/upload:
           path_to_lcov: .coveralls.yml
 
-jobs:
+
   check_token:
     steps:
       - name: check token
