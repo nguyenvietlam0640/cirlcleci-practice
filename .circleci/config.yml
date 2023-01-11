@@ -24,11 +24,6 @@ jobs:
 
 jobs:
   check_token:
-    docker: 
-      - image: cimg/node:lts
-        auth:
-          username: mydockerhub-user
-          password: $DOCKERHUB_PASSWORD
     steps:
       - name: check token
         
