@@ -19,7 +19,8 @@ jobs:
             sudo apt-get install npm
             
             coverage run -m pytest
-      - coveralls/upload
+      - coveralls/upload:
+          path_to_lcov: .coverage/lcov.info
 
 workflows:
   execute:
