@@ -8,8 +8,6 @@ jobs:
   build_and_test:
     executor: python/default
     steps:
-      with:
-        repo_token: shMx23aSB7ex6npmYqrQiad2pDTDiFHjc
       - checkout
       - python/install-packages:
           pkg-manager: pip
