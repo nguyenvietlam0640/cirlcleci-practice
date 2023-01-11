@@ -19,7 +19,7 @@ jobs:
             sudo apt-get install npm
             
             coverage run -m pytest
-            repo_token: shMx23aSB7ex6npmYqrQiad2pDTDiFHjc coveralls
+          
       
 
 workflows:
