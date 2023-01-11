@@ -27,6 +27,7 @@ jobs:
     env: 
       token: ${{ secrets.REPO_TOKEN }}
     steps:
+      - checkout
       - run: 
           name: test token
           command: echo env.token
