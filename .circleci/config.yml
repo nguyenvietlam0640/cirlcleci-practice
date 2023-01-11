@@ -20,7 +20,7 @@ jobs:
             
             coverage run -m pytest
       - coveralls/upload:
-          path_to_lcov: .coverage
+          path_to_lcov: .coveralls.yml
 
 workflows:
   execute:
