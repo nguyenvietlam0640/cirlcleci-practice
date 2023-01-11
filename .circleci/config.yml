@@ -20,18 +20,9 @@ jobs:
             sudo apt-get upgrade
             sudo apt-get install npm
             
-            coverage run -m pytest 
-      - coveralls/upload:
-          path_to_lcov: .coverage
-      - name: Publish to coveralls.io
-        uses: coverallsapp/github-action@v1.1.2
-        with:
-          
-
+            coverage run -m pytest
+            repo_token: shMx23aSB7ex6npmYqrQiad2pDTDiFHjc coveralls
       
-
-      
-
 
 workflows:
   execute:
