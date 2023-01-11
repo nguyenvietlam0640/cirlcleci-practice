@@ -24,13 +24,13 @@ jobs:
 
   check_token:
     executor: python/default
-    env: 
-      token: ${{ secrets.REPO_TOKEN }}
+
     steps:
-      - checkout
-      - run: 
-          name: test token
-          command: echo env.token
+      - name: Step 2 - GitHub Action if statement (true)
+        env: 
+          WHO_TO_TRUST: ${{ secrets.SECRET_TOKEN }}
+        if:  env.WHO_TO_TRUST == 'TrustNo1'
+        run: echo "I know what the secret token is!"
 
 
 workflows:
