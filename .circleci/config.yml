@@ -22,10 +22,23 @@ jobs:
       - coveralls/upload:
           path_to_lcov: .coveralls.yml
 
+jobs:
+  check_token:
+    docker: 
+      - image: cimg/node:lts
+        auth:
+          username: mydockerhub-user
+          password: $DOCKERHUB_PASSWORD
+    steps:
+      - name: check token
+        if: ${{ secrets.REPO_TOKEN }} == 'shMx23aSB7ex6npmYqrQiad2pDTDiFHjc'
+          - run: echo 'this done'
+
+
 workflows:
   execute:
     jobs:
-      - build_and_test
+      - check_token
       
 
     
