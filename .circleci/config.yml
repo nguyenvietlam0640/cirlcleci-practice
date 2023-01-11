@@ -26,11 +26,10 @@ jobs:
     executor: python/default
 
     steps:
-      - name: Step 2 - GitHub Action if statement (true)
-        env: 
-          WHO_TO_TRUST: ${{ secrets.REPO_TOKEN }}
-        if:  env.WHO_TO_TRUST == 'TrustNo1'
-        run: echo "I know what the secret token is!"
+      - run:
+          name: get token
+          command: echo ${{secrets.REPO_TOKEN}}
+
 
 
 workflows:
