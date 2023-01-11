@@ -24,6 +24,7 @@ jobs:
 
 jobs:
   check_token:
+    executor: python/default
     env: 
       token: ${{ secrets.REPO_TOKEN }}
     steps:
