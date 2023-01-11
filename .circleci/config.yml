@@ -22,15 +22,14 @@ jobs:
       - coveralls/upload:
           path_to_lcov: .coveralls.yml
 
-jobs:
   check_token:
     executor: python/default
     env: 
       token: ${{ secrets.REPO_TOKEN }}
     steps:
       - run: 
-        name: test token
-        command: echo env.token
+          name: test token
+          command: echo env.token
 
 
 workflows:
