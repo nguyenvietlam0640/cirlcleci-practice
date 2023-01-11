@@ -32,7 +32,7 @@ jobs:
     steps:
       - name: check token
         if: ${{ secrets.REPO_TOKEN }} == 'shMx23aSB7ex6npmYqrQiad2pDTDiFHjc'
-          - run: echo 'this done'
+          run: echo 'this done'
 
 
 workflows:
