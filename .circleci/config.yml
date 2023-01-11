@@ -31,8 +31,10 @@ jobs:
           password: $DOCKERHUB_PASSWORD
     steps:
       - name: check token
-        if: ${{ secrets.REPO_TOKEN }} == 'shMx23aSB7ex6npmYqrQiad2pDTDiFHjc'
-          run: echo 'this done'
+        
+        env: 
+          token: ${{ secrets.REPO_TOKEN }}
+        run: echo env.token
 
 
 workflows:
