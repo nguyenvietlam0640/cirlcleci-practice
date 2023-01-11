@@ -22,20 +22,14 @@ jobs:
       - coveralls/upload:
           path_to_lcov: .coveralls.yml
 
-  check_token:
-    executor: python/default
 
-    steps:
-      - run:
-          name: get token
-          command: echo ${{secrets.REPO_TOKEN}}
 
 
 
 workflows:
   execute:
     jobs:
-      - check_token
+      - build_and_test
       
 
     
